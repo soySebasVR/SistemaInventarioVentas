@@ -112,7 +112,7 @@ public class App {
                 System.out.println("CIERRE");
                 break;
             } else {
-
+                System.out.println("Número ingresado no válido");
             }
         }
     }
