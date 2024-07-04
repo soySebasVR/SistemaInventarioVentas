@@ -4,14 +4,14 @@ import java.util.concurrent.TimeUnit;
 public class App {
     public static void main(String[] args) throws Exception {
         String opcion;
-        System.out.println("Bienvenido al sistema de ventas");
+        System.out.println("Bienvenido al Sistema de Ventas de la Bodega San Judas");
         TimeUnit.SECONDS.sleep(1);
 
         try (Scanner sc = new Scanner(System.in)) {
             while (true) {
-                System.out.println("Qué desea hacer?");
+                System.out.println("¿Qué desea hacer?");
                 System.out.println("1. Ingresar venta");
-                System.out.println("2. Ingresar producto");
+                System.out.println("2. Ingresar un producto");
                 System.out.println("4. Salir");
                 opcion = sc.nextLine();
 
@@ -22,10 +22,10 @@ public class App {
                     NuevoProducto();
                     TimeUnit.SECONDS.sleep(1);
                 } else if (opcion.equals("4")) {
-                    System.out.println("Gracias");
+                    System.out.println("Muchas Gracias");
                     System.exit(0);
                 } else {
-                    System.out.println("Número ingresado no válido");
+                    System.out.println("El número ingresado no es válido");
                 }
             }
         }
@@ -46,18 +46,18 @@ public class App {
                 opcion = sc.nextLine();
 
                 if (opcion.equals("1")) {
-                    System.out.println("Ingresar nombre:");
+                    System.out.println("Ingresar el nombre del producto:");
                     nombre = sc.nextLine();
                     prod = Producto.buscar(nombre);
                     if (prod.cantidad == 0) {
-                        System.out.println("Producto no existe");
+                        System.out.println("El producto no existe");
                         continue;
                     }
-                    System.out.println("Ingresar cantidad:");
+                    System.out.println("Ingresa la cantidad:");
                     try {
                         cantidad = Integer.valueOf(sc.nextLine());
                     } catch (NumberFormatException e) {
-                        System.out.println("Cantidad no valida");
+                        System.out.println("La cantidad no es valida");
                         continue;
                     }
                     if (cantidad > prod.cantidad) {
@@ -71,7 +71,7 @@ public class App {
                     System.out.println("CIERRE VENTA");
                     System.out.printf("Boleta total: %.2f soles\n\n", total);
                 } else {
-                    System.out.println("Número ingresado no válido");
+                    System.out.println("El número ingresado no es válido");
                 }
             }
         }
