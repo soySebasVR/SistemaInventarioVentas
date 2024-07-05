@@ -9,11 +9,12 @@ public class App {
 
         try (Scanner sc = new Scanner(System.in)) {
             while (true) {
-                System.out.println("¿Qué desea hacer?");
+                System.out.println("\n¿Qué desea hacer?");
                 System.out.println("1. Ingresar venta");
                 System.out.println("2. Ingresar un producto");
                 System.out.println("3. Salir");
                 opcion = sc.nextLine();
+                TimeUnit.MILLISECONDS.sleep(300);
 
                 if (opcion.equals("1")) {
                     Venta(sc);
@@ -31,7 +32,7 @@ public class App {
         }
     }
 
-    public static void Venta(Scanner sc) {
+    public static void Venta(Scanner sc) throws InterruptedException {
         double total = 0;
         String opcion;
         String nombre;
@@ -39,7 +40,8 @@ public class App {
         int cantidad;
 
         while (true) {
-            System.out.println("Qué desea hacer?");
+            TimeUnit.MILLISECONDS.sleep(300);
+            System.out.println("\n¿Qué desea hacer?");
             System.out.println("1. Ingresar Producto");
             System.out.println("2. Cierre venta");
             opcion = sc.nextLine();
@@ -76,7 +78,7 @@ public class App {
         }
     }
 
-    public static void NuevoProducto(Scanner sc) {
+    public static void NuevoProducto(Scanner sc) throws InterruptedException {
         String opcion;
         Producto prod;
         String nombre;
@@ -86,7 +88,8 @@ public class App {
         String precioStr;
 
         while (true) {
-            System.out.println("Qué desea hacer?");
+            TimeUnit.MILLISECONDS.sleep(300);
+            System.out.println("\n¿Qué desea hacer?");
             System.out.println("1. Ingresar Producto");
             System.out.println("2. Cierre");
             opcion = sc.nextLine();
