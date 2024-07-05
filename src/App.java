@@ -104,7 +104,7 @@ public class App {
                 System.out.println("Ingresar nuevo precio (Sin valor para mantener)");
                 precioStr = sc.nextLine();
                 if (!precioStr.equals("")) {
-                    precio = Integer.valueOf(precioStr);
+                    precio = Double.valueOf(precioStr);
                     prod.precio = precio;
                 }
                 prod.guardar();
